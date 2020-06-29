@@ -1,25 +1,19 @@
-def stockgraph(StockSymb)
+def getstockdata(StockSymb)
 
     csvurl = ('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + StockSymb + '&apikey=ECO7VXU7CT9JLWCT&datatype=csv')
-
     csvstockdata = requests.get(csvurl)
-
     with open('stockdata.csv', 'wb') as f:
            f.write(csvstockdata.content)
-       
-    csvstockdf = pd.read_csv('stockdata.csv')
+    return csvstockdf = pd.read_csv('stockdata.csv')
 
-    jsonstockdf = pd.read_json(jsonstockdata.content)
 
-    #print(csvstockdf.columns)
-
+def plotstockgraph()    
     from bokeh.layouts import gridplot
     from bokeh.plotting import figure, output_file, show
 
-    def datetime(x):
-        return np.array(x, dtype=np.datetime64)
-
-    #filter for one month--either set or ask user to choose month
+        def datetime(x):
+            return np.array(x, dtype=np.datetime64)
+    #future feature: filter for one month--either set or ask user to choose month
 
     p1 = figure(x_axis_type="datetime", title="Stock Closing Prices")
     p1.xaxis.axis_label = 'Date'

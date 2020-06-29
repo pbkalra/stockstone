@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-import stockgraph
+from stockgraph import getstockdata, plotstockgraph
 
 app = Flask(__name__)
 
@@ -12,6 +12,8 @@ def index():
     else:
         app.vars['name'] = request.form['StockSymb']
         result = stockgraph(name)
+        plotstockgraph()
+        #currently having trouble with the definition of this function
 #future: add input validation in case the user enters an invalid stock symbol
 
 @app.route('/time_series', methods = ['POST'])
