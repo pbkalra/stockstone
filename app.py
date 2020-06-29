@@ -10,8 +10,8 @@ def index():
     if request.method == 'GET':
         return render_template('input1.html')
     else:
-    app.vars['name'] = request.form['StockSymb']
-    result = stockgraph(name)
+        app.vars['name'] = request.form['StockSymb']
+        result = stockgraph(name)
 #future: add input validation in case the user enters an invalid stock symbol
 
 @app.route('/time_series', methods = ['POST'])
