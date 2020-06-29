@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
   return render_template('input1.html')
 
-stockdata.py
+#stockdata.py
 
 @app.route('/time_series')
 def about():
