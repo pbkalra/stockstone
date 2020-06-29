@@ -1,0 +1,23 @@
+<!doctype html>
+<title>Stock Ticker App</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style_lulu.css')}}'>
+<div class=page>
+  <h1>This is a stock ticker app.</h1>
+  <div class=metanav>
+
+<h4>
+Type the symbol (1-4 characters) for the stock you want to see.
+</h4>
+
+<form id='userinfoform_lulu' method='post' action='index_lulu' > <!-- action is the URL you want to move to next-->
+   <p>
+   Stock Symbol: <input type='text' name='StockSymb' />
+   </p>
+   
+   <p>
+   <input type='submit' value='Submit' /> <!-- value is the text that will appear on the button. -->
+   </p>
+</form>
+
+</div>
+</div>
