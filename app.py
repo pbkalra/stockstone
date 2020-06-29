@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
   return render_template('input1.html')
 
-stockgraph(StockSymb)
+#stockgraph(StockSymb)
 
 #@app.route('/time_series')
 #def about():
