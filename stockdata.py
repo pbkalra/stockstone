@@ -1,11 +1,11 @@
-import requests
-import simplejson
-import numpy as np
-import pandas as pd
+#import requests
+#import simplejson
+#import numpy as np
+#import pandas as pd
 
 ##This part-asking the user for the stock symbol--will eventually be part of an HTML page on flask on heroku
-StockSymb = input("What stock do you want to see?")
-print("You asked for %s" %StockSymb)
+#StockSymb = input("What stock do you want to see?")
+#print("You asked for %s" %StockSymb)
 
 #You could make a dictionary here for all the variables such as symbol, api key, and if you were using intraday, even for the interval
 
@@ -46,7 +46,7 @@ p1.yaxis.axis_label = 'Price'
 p1.line(datetime(csvstockdf['timestamp']), csvstockdf['close'], color='#A6CEE3', legend_label=StockSymb)
 #p1.line(datetime(csvstockdf['timestamp']), csvstockdf['open'], color='#B2DF8A', legend_label='open')
 
-outfilename = StockSymb + 'time_series.html'
+outfilename = 'time_series.html' #+ StockSymb 
 
 output_file(outfilename, title="adapted from stocks.py example")
 

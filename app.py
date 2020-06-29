@@ -6,7 +6,9 @@ app = Flask(__name__)
 def index():
   return render_template('input1.html')
 
-@app.route('/about')
+stockdata.py
+
+@app.route('/time_series')
 def about():
   return render_template('time_series.html')
 
