@@ -3,15 +3,19 @@ import stockgraph
 
 app = Flask(__name__)
 
-@app.route('/')
+app.vars = {}
+
+@app.route('/', methods = ['GET', 'POST'])
 def index():
-  return render_template('input1.html')
+    if request.method == 'GET':
+        return render_template('input1.html')
+    else
+    app.vars['name'] = request.form['StockSymb']
+    result = stockgraph(name)
+#future: add input validation in case the user enters an invalid stock symbol
 
-
-
-@app.route('/time_series')
+@app.route('/time_series', methods = ['POST'])
 def time_series():
-    #stockgraph(StockSymb)
   return render_template('time_series.html')
 
 if __name__ == '__main__':
