@@ -1,4 +1,4 @@
-def getstockdata(StockSymb)
+def getstockdata(StockSymb):
 
     csvurl = ('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + StockSymb + '&apikey=ECO7VXU7CT9JLWCT&datatype=csv')
     csvstockdata = requests.get(csvurl)
