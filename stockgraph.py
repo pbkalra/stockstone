@@ -7,12 +7,12 @@ def getstockdata(StockSymb)
     return csvstockdf = pd.read_csv('stockdata.csv')
 
 
-def plotstockgraph()    
+def plotstockgraph():    
     from bokeh.layouts import gridplot
     from bokeh.plotting import figure, output_file, show
 
-        def datetime(x):
-            return np.array(x, dtype=np.datetime64)
+  def datetime(x):
+      return np.array(x, dtype=np.datetime64)
     #future feature: filter for one month--either set or ask user to choose month
 
     p1 = figure(x_axis_type="datetime", title="Stock Closing Prices")
