@@ -11,7 +11,7 @@ def index():
         return render_template('input1.html')
     else:
         app.vars['name'] = request.form['StockSymb']
-        result = stockgraph(name)
+        result = stockgraph(['name'])
         plotstockgraph()
         #currently having trouble with the definition of this function
 #future: add input validation in case the user enters an invalid stock symbol
